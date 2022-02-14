@@ -8,7 +8,10 @@
   "scripts": {
     "start":"lerna run start",
     "test":"lerna run test",
+    "build":"lerna run build",
+    "push":"lerna publish --yes",
     "new-version":"lerna version --conventional-commits --yes",
-    "diff":"lerna diff"
+    "diff":"lerna diff",
+    "setup":"lerna bootstrap --ci --hoist"
   }
 }
