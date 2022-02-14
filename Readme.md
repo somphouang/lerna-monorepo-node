@@ -123,12 +123,20 @@ npx lerna bootstrap --hoist
 }
 ```
 
-16.  Test this out from the root, using `lerna`
+16. Add root package devDependencies, open `./package.json` in the root level
+```
+"devDependencies": {
+  "lerna": "^4.0.0",
+  "conventional-changelog-conventionalcommits": "^4.6.3"
+}
+```
+
+17.  Test this out from the root, using `lerna`
 ```
 npm run test
 ```
 
-17.  Run the app services from both packages
+18.  Run the app services from both packages
 ```
 npm start
 ```

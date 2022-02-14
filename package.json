@@ -3,7 +3,8 @@
   "private": false,
   "version": "1.0.0",
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "conventional-changelog-conventionalcommits": "^4.6.3"
   },
   "scripts": {
     "start": "lerna run start",
