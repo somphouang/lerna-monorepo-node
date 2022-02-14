@@ -136,6 +136,11 @@ npm start
 
 That's it, now you can add more `scripts` like `publish` and more, see https://lerna.js.org/ for more details.
 
+## Azure DevOps Pipeline
+
+Demo and testing out the Azure DevOps pipeline by creating pipeline referencing the `azure-pipeline.yml` and commit using the conventional commit comment message
+with types, like `fix: your message ...`, `feat: new feature added ...`, `doc: update readme ...`, `build: fixed something ...`
+
 
 
 
