@@ -14,17 +14,13 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+
 - task: Npm@1
   displayName: 'Install Lerna tool'
   inputs:
     command: 'custom'
     customCommand: 'install --global lerna'
-- task: Npm@1
-  displayName: 'Install react-app components'
-  inputs:
-   command: 'custom'
-   customCommand: 'install -g create-react-app'
-
+    
 - script: |
     npm install
     npm run build
