@@ -1,6 +1,79 @@
 {
   "packages": [
-    "packages/*"
+    "packages/*",
+    "packages/types/*"
   ],
-  "version": "1.0.0"
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "changelogPreset": {
+         "name": "conventionalcommits",
+         "issuePrefixes": [
+           "#"
+         ],
+         "types": [
+           {
+             "type": "feat",
+             "section": "Features"
+           },
+           {
+             "type": "feature",
+             "section": "Features"
+           },
+           {
+             "type": "fix",
+             "section": "Bug Fixes"
+           },
+           {
+            "type": "perf",
+            "section": "Performance Improvements"
+           },
+           {
+            "type": "revert",
+            "section": "Reverts"
+           },
+           {
+            "type": "doc",
+            "section": "Documentation",
+            "hidden": true
+           },
+           {
+            "type": "style",
+            "section": "Styles",
+            "hidden": true
+           },
+           {
+            "type": "chore",
+            "section": "Miscellaneous Chores",
+            "hidden": true
+           },
+           {
+            "type": "refactor",
+            "section": "Code Refactoring",
+            "hidden": true
+           },
+           {
+            "type": "test",
+            "section": "Tests",
+            "hidden": true
+           },
+           {
+            "type": "ci",
+            "section": "Continuous Integration",
+            "hidden": true
+           }
+         ],
+         "commitUrlFormat": "https://dev.azure.com/OrgNameHere/ProjNameHere/_git/{{repository}}/commit/{{hash}}",
+         "compareUrlFormat": "https://dev.azure.com/OrgNameHere/ProjNameHere/_git/{{repository}}/compare/diff?targetBranch=refs/tags/{{previousTag}}&sourceBranch=refs/tags/{{currentTag}}",
+         "issueUrlFormat": "https://dev.azure.com/OrgNameHere/ProjNameHere/_workitems/edit/{{id}}",
+         "userUrlFormat": "https://dev.azure.com/OrgNameHere/ProjNameHere/_git/users/{{user}}/"         
+      }
+    },
+    "publish": {
+      "ignoreChanges": [
+        "**/*.md"
+      ]
+    }
+  },
+  "version": "independent"
 }
