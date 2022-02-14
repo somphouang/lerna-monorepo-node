@@ -17,7 +17,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'custom'
-    customCommand: 'install -g react-scripts'
+    customCommand: 'install --global lerna'
 
 - script: |
     npm install
