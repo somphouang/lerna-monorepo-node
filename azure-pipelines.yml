@@ -17,7 +17,7 @@ steps:
 
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '16.x'
   displayName: 'Install Node.js'
 
 - task: Npm@1
@@ -35,7 +35,7 @@ steps:
       git switch $(Build.SourceBranchName)
 
 - script: |
-    npm run 'Setup
+    npm run setup
   displayName: 'Setup npm and Lerna hoist packages'
 
 - task: Npm@1
