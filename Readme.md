@@ -150,7 +150,25 @@ Demo and testing out the Azure DevOps pipeline by creating pipeline referencing 
 with types, like `fix: your message ...`, `feat: new feature added ...`, `doc: update readme ...`, `build: fixed something ...`
 
 
+### Releasing Version Package
 
+In Azure DevOps pipeline, the final step is to install and publish package, doing so required that the `Artifact` feed versioning should be newer and this is the only manual process when commit to do `pull request` into the `releasing branch` say `master` in this demo repository
+
+Update the root file `./package.json` in the key `"version"` manually to go up to the version to have publish.
+
+For example,
+```
+...
+"version": "1.0.2",
+...
+```
+
+Update to,
+```
+...
+"version": "1.0.3",
+...
+```
 
 
 

@@ -10,6 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
+- checkout: self
+  persistCredentials: true
+  displayName: 'Git checkout self'
+
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
@@ -20,11 +25,37 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'install --global lerna'
-    
+
+- task: CmdLine@2
+  displayName: 'Setup git for lerna commit'
+  inputs:
+    script: |
+      git config --global user.email "devops@somphouang.com"
+      git config --global user.name "CICD Pipeline Azure DevOps"
+      git switch $(Build.SourceBranchName)
+
+- script: |
+    npm run 'Setup
+  displayName: 'Setup npm and Lerna hoist packages'
+
+- task: Npm@1
+  displayName: 'npm ci'
+  inputs:
+    command: 'ci'
+    customRegistry: 'useFeed'
+    customFeed: SomSandbox/demonstration
+
+- script: |
+    git status
+    npm run new-version
+    git push --follow-tags origin HEAD:$(Build.SourceBranch)
+  displayName: 'Lerna versioning update and git push tag'
+
 - script: |
     npm install
     npm run build
-  displayName: 'npm install and build'
+  displayName: 'Install and Build Package'
+
 - task: Npm@1
   displayName: Publish Package
   inputs:

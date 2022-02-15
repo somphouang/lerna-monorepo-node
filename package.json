@@ -1,7 +1,9 @@
 {
   "name": "lerna-monorepo-demo",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.2",
+  "description": "Demo versioning with lerna in Azure DevOps",
+  "license": "MIT",
   "devDependencies": {
     "lerna": "^4.0.0",
     "conventional-changelog-conventionalcommits": "^4.6.3"
@@ -11,7 +13,7 @@
     "test": "lerna run test",
     "build": "lerna run build",
     "push": "lerna publish --yes",
-    "new-version": "lerna version --conventional-commits --yes",
+    "new-version": "lerna version  --no-push --conventional-commits --yes",
     "diff": "lerna diff",
     "setup": "lerna bootstrap --ci --hoist"
   },
